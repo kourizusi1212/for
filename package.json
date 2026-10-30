@@ -1,0 +1,10 @@
+{
+  "name": "forsaken-like",
+  "version": "1.0.0",
+  "description": "Asymmetric 3D online game (1 killer vs survivors) - Node.js + WebSocket + Three.js",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "ws": "^8.18.0" },
+  "license": "MIT"
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>FORSAKEN-LIKE</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#000;color:#eee;font-family:system-ui,sans-serif;user-select:none}
+canvas{display:block}
+#lobby{position:fixed;inset:0;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;background:rgba(5,6,12,.85)}
+#lobby h1{letter-spacing:.3em;margin:0;color:#e33}
+#lobby input,#lobby button{font-size:18px;padding:10px 16px;border-radius:6px;border:1px solid #555;background:#161a28;color:#eee}
+#lobby button{background:#a22;cursor:pointer}
+#lobby p{max-width:420px;color:#aab;font-size:14px;line-height:1.6;text-align:center}
+#hud{position:fixed;inset:0;pointer-events:none;display:none}
+#top{position:absolute;top:12px;width:100%;text-align:center;font-size:20px;text-shadow:0 0 6px #000}
+#msg{position:absolute;top:80px;width:100%;text-align:center;font-size:30px;font-weight:700;text-shadow:0 0 8px #000}
+#prompt{position:absolute;bottom:140px;width:100%;text-align:center;font-size:20px}
+#bars{position:absolute;left:20px;bottom:20px;width:260px}
+.bar{height:14px;background:#222;border:1px solid #555;margin-top:6px}.bar i{display:block;height:100%}
+#hp i{background:#d33}#st i{background:#3c8}#gp i{background:#fc3}
+#flash{position:absolute;inset:0;background:radial-gradient(transparent 40%,rgba(200,0,0,.7));opacity:0;transition:opacity .4s}
+</style></head><body>
+<div id="lobby"><h1>FORSAKEN-LIKE</h1>
+<p>1人のキラーと複数のサバイバー。サバイバーは発電機(4台)を修理して出口を開け脱出、キラーは全員を倒せ。<br>
+WASD移動 / Shift走る / E長押しで修理 / クリックで攻撃(キラー) / マウスで視点</p>
+<input id="name" maxlength="12" placeholder="名前"><button id="play">参加する</button></div>
+<div id="hud"><div id="top"></div><div id="msg"></div><div id="prompt"></div>
+<div id="bars"><div id="role"></div><div class="bar" id="hp"><i></i></div><div class="bar" id="st"><i></i></div><div class="bar" id="gp" style="display:none"><i></i></div></div>
+<div id="flash"></div></div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="game.js"></script>
+</body></html>
